@@ -15,8 +15,10 @@ var postsData = [
     url: 'http://themeteorbook.com'
   }
 ];
+
 Template.postsList.helpers({
   posts: function() {
-    return Posts.find();
+    Meteor.call("addPost", this.title, this.url);
+    //return Posts.find();
   }
 });

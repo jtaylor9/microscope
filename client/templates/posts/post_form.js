@@ -1,10 +1,7 @@
-/**
- * Created by jtayl_000 on 10/29/2015.
- */
 Template.post_form.events({
 
   // handle the form submission
-  'submit form': function(event) {
+  'submit form': function(event, template) {
 
     // stop the form from submitting
     event.preventDefault();
@@ -13,6 +10,8 @@ Template.post_form.events({
       title: event.target.title.value,
       url: event.target.url.value
     });
+
+    template.find("form").reset();
   }
 
 });
